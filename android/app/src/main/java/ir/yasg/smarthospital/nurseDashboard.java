@@ -32,8 +32,8 @@ public class nurseDashboard extends AppCompatActivity
         setContentView(R.layout.activity_nurse_dashboard);
         initialization();
         //tvRole.setText(R.string.nav_header_nurse_role);
-        tvRole.setText("پرستار");
-        tvRole.
+        //tvRole.setText("پرستار");
+        //tvRole.
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         FloatingActionButton fab = findViewById(R.id.fab);

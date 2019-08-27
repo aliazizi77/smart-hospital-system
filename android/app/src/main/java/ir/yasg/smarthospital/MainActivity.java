@@ -24,19 +24,27 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initialization();
+
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 user = userName.getText().toString();
                 pass = password.getText().toString();
                 Intent intent = new Intent(MainActivity.this , nurseDashboard.class);
-                startActivity(intent);
-                if (user == "docter" && pass == "123456"){
-                   // Intent intent = new Intent(MainActivity.this , nurseDashboard.class);
-                    //startActivity(intent);
-                }else {
-                    Toast.makeText(MainActivity.this, "عملیات ورود با مشکل مواجه شده است!!!", Toast.LENGTH_LONG).show();
+                //startActivity(intent);
+                if (user.equals("doctor") && pass.equals("123456")){
+                    //Intent intent = new Intent(MainActivity.this , nurseDashboard.class);
+                    startActivity(intent);
 
+                }else {
+                    if (userName.getText().toString().equals("")){
+                        Toast.makeText(MainActivity.this, "نام کاربری را وارد نمایید", Toast.LENGTH_LONG).show();
+                    }
+                    if(password.getText().toString().equals("")){
+                        Toast.makeText(MainActivity.this, "کلمه عبور را وارد نمایید", Toast.LENGTH_LONG).show();
+                    }else {
+                        Toast.makeText(MainActivity.this, "اطلاعات وارد شده صحیح نمی باشد!!!", Toast.LENGTH_LONG).show();
+                    }
                 }
 
             }
@@ -49,6 +57,9 @@ public class MainActivity extends AppCompatActivity {
         btnLogin = findViewById(R.id.btn_login);
         userName = findViewById(R.id.et_user_name);
         password = findViewById(R.id.et_password);
+
+    }
+    public void isValidet(){
 
     }
 
